@@ -2,9 +2,6 @@
 * Structure de données de l'application ecommerce
  ****************************************************/
 
--- Suppression de la base si elle existe
-DROP DATABASE IF EXISTS ecommerce;
-
 -- Création de la base de données
 CREATE DATABASE ecommerce
 CHARACTER SET = utf8 COLLATE = utf8_general_ci;
@@ -12,9 +9,9 @@ CHARACTER SET = utf8 COLLATE = utf8_general_ci;
 USE ecommerce;
 
 -- ----------------------------------------------
--- Table  `ecommerce`.`langues`
+-- Table langues
 -- ----------------------------------------------
-CREATE TABLE IF NOT EXISTS `ecommerce`.`langues` (
+CREATE TABLE langues (
 id_langue SMALLINT UNSIGNED AUTO_INCREMENT,
 nom_langue VARCHAR(20) NOT NULL,
   PRIMARY KEY (id_langue)
@@ -82,13 +79,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ecommerce`.`statut_de_commmande`
+-- Table `ecommerce`.`Coupon`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ecommerce`.`statut_de_commmande` (
+CREATE TABLE IF NOT EXISTS ecommerce.statut_de_commmande (
     statut VARCHAR(255),
-    id_statut Tinyint unsigned auto_increment,
+    id_satut Tinyint unsigned auto_increment
     PRIMARY KEY (id_statut)
 )ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `ecommerce`.`Coupon`
@@ -102,10 +100,10 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`Coupon` (
 ENGINE = InnoDB;
 
 
--- ------------------------------------------------------
+--------------------------------------------------------
 --  TABLE ecommerce.mode_de_paiement
--- ------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_de_paiement` (
+--------------------------------------------------------
+CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
   id_mode_de_paiement INT NOT NULL,
   mode_de_paiement VARCHAR(45) NOT NULL,
   PRIMARY KEY (id_mode_de_paiement),
@@ -113,9 +111,9 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_de_paiement` (
   ENGINE = InnoDB;
 
 
--- ------------------------------------------------------
+--------------------------------------------------------
 --  TABLE ecommerce.mode_livraison
--- ------------------------------------------------------
+--------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
   `id_mode_livraison` INT NOT NULL,
   `description_mode_livraison` VARCHAR(45) NULL,
@@ -125,9 +123,9 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
 ENGINE = InnoDB;
 
 
--- ------------------------------------------------------
+--------------------------------------------------------
 --  TABLE ecommerce.mode_editeurs
--- ------------------------------------------------------
+--------------------------------------------------------
 
 -- Export de données de la table e_commerce.éditeurs : ~3 rows (environ)
 DELETE FROM `éditeurs`;
@@ -142,10 +140,9 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_C
 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT ;
 
 
--- ------------------------------------------------------
--- ------------------------------------------------------
+--------------------------------------------------------
 --  TABLE ecommerce.roles_auteurs
--- ------------------------------------------------------
+--------------------------------------------------------
 CREATE TABLE `ecommerce`.`roles_auteurs` (
   id_role INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY(id_role)
@@ -155,8 +152,3 @@ CREATE TABLE `ecommerce`.`roles_auteurs` (
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('espece');
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('carte bleu');
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('cheque');
-
-CREATE TABLE roles_auteurs (
-  id_role INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY(id_role)
-)  ENGINE = InnoDB;
