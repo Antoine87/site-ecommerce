@@ -4,7 +4,7 @@
 
 -- Création de la base de données
 CREATE DATABASE ecommerce
-CHARACTER SET = utf8 COLLATE = utf8_general_ci;
+  CHARACTER SET = utf8 COLLATE = utf8_general_ci;
 
 USE ecommerce;
 
@@ -12,8 +12,8 @@ USE ecommerce;
 -- Table langues
 -- ----------------------------------------------
 CREATE TABLE langues (
-id_langue SMALLINT UNSIGNED AUTO_INCREMENT,
-nom_langue VARCHAR(20) NOT NULL,
+  id_langue SMALLINT UNSIGNED AUTO_INCREMENT,
+  nom_langue VARCHAR(20) NOT NULL,
   PRIMARY KEY (id_langue)
 ) ENGINE = INNODB;
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`clients` (
   `mot_de_passe` VARCHAR(45) NULL,
   `date_naissance` DATE NULL,
   PRIMARY KEY (`id_client`))
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -51,11 +51,11 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`telephones` (
   PRIMARY KEY (`id_telephones`),
   INDEX `fk_telephones_clients1_idx` (`clients_id_client` ASC),
   CONSTRAINT `fk_telephones_clients1`
-    FOREIGN KEY (`clients_id_client`)
-    REFERENCES `ecommerce`.`clients` (`id_client`)
+  FOREIGN KEY (`clients_id_client`)
+  REFERENCES `ecommerce`.`clients` (`id_client`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -71,19 +71,19 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`adresses` (
   PRIMARY KEY (`id_adresse`),
   INDEX `fk_adresses_clients1_idx` (`clients_id_client` ASC),
   CONSTRAINT `fk_adresses_clients1`
-    FOREIGN KEY (`clients_id_client`)
-    REFERENCES `ecommerce`.`clients` (`id_client`)
+  FOREIGN KEY (`clients_id_client`)
+  REFERENCES `ecommerce`.`clients` (`id_client`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `ecommerce`.`Coupon`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS ecommerce.statut_de_commmande (
-    statut VARCHAR(255),
-    id_satut Tinyint unsigned auto_increment
+  statut VARCHAR(255),
+  id_satut Tinyint unsigned auto_increment
     PRIMARY KEY (id_statut)
 )ENGINE = InnoDB;
 
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`Coupon` (
   `Date_fin` DATE NULL,
   `Remise` FLOAT NULL,
   PRIMARY KEY (`idCoupon`))
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- ------------------------------------------------------
@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
   `tarif_livraison` DECIMAL(2) NULL,
   `delais_livraison` INT NULL,
   PRIMARY KEY (`id_mode_livraison`))
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- ------------------------------------------------------
@@ -131,9 +131,9 @@ ENGINE = InnoDB;
 DELETE FROM `éditeurs`;
 ALTER TABLE `éditeurs` DISABLE KEYS ;
 INSERT INTO `éditeurs` (`ID`, `Nom`) VALUES
-	(1, 'MICHEL LAFON'),
-	(2, 'John Tiffany'),
-	(3, 'Carole Neel ');
+  (1, 'MICHEL LAFON'),
+  (2, 'John Tiffany'),
+  (3, 'Carole Neel ');
 ALTER TABLE `éditeurs` ENABLE KEYS ;
 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') ;
 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) ;
