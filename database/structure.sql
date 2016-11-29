@@ -95,3 +95,18 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`Coupon` (
   `Remise` FLOAT NULL,
   PRIMARY KEY (`idCoupon`))
 ENGINE = InnoDB;
+
+--------------------------------------------------------
+--  TABLE ecommerce.mode_de_paiement
+--------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
+  id_mode_de_paiement INT NOT NULL,
+  mode_de_paiement VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id_mode_de_paiement),
+  UNIQUE INDEX id_mode_de_paiement_UNIQUE (id_mode_de_paiement ASC))
+  ENGINE = InnoDB;
+
+INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('espece');
+INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('carte bleu');
+INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('cheque');
