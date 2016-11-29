@@ -1,3 +1,5 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+-- noinspection SqlDialectInspectionForFile
 /****************************************************
 * Structure de données de l'application ecommerce
  ****************************************************/
