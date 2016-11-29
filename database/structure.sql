@@ -22,6 +22,7 @@ nom_langue VARCHAR(30) NOT NULL,
   PRIMARY KEY (id_langue)
 ) ENGINE = INNODB;
 
+
 -- -----------------------------------------------------
 -- Table `ecommerce`.`auteurs`
 -- -----------------------------------------------------
