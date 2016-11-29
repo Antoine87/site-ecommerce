@@ -9,7 +9,7 @@ CREATE DATABASE ecommerce;
 -- -----------------------------------------------------
 -- Table ecommerce.Auteurs
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS ecommerce.Auteurs (
+CREATE TABLE IF NOT EXISTS ecommerce.auteurs (
   id_auteur INT NOT NULL AUTO_INCREMENT,
   nom_auteur VARCHAR(45) NOT NULL,
   prenom_auteur VARCHAR(45) NOT NULL,
