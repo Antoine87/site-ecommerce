@@ -12,9 +12,9 @@ CHARACTER SET = utf8 COLLATE = utf8_general_ci;
 USE ecommerce;
 
 -- ----------------------------------------------
--- Table langues
+-- Table  `ecommerce`.`langues`
 -- ----------------------------------------------
-CREATE TABLE langues (
+CREATE TABLE IF NOT EXISTS `ecommerce`.`langues` (
 id_langue SMALLINT UNSIGNED AUTO_INCREMENT,
 nom_langue VARCHAR(20) NOT NULL,
   PRIMARY KEY (id_langue)
@@ -125,6 +125,16 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
 ENGINE = InnoDB;
 
 
+--------------------------------------------------------
+--  TABLE ecommerce.mode_livraison
+--------------------------------------------------------
+CREATE TABLE ecommerce.roles_auteurs (
+  id_role INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY(id_role)
+);
+
+
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('espece');
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('carte bleu');
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('cheque');
+
