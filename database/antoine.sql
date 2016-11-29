@@ -1,3 +1,7 @@
+-- ------------------------------------------------------
+--  INSERT `ecommerce`.`clients`
+-- ------------------------------------------------------
+TRUNCATE `ecommerce`.`clients`;
 INSERT INTO `ecommerce`.`clients`
   (`nom`, `prenom`, `email`, `mot_de_passe`, `date_naissance`)
 VALUES
@@ -9,6 +13,11 @@ VALUES
   ('Pompidou', 'Antoine', 'mail@mail.com', 'mdp123', '1880-01-01');
 
 
+
+-- ------------------------------------------------------
+--  INSERT `ecommerce`.`adresses`
+-- ------------------------------------------------------
+TRUNCATE `ecommerce`.`adresses`;
 INSERT INTO `ecommerce`.`adresses`
   (`adresse`, `code_postal`, `ville`, `est_adresse_facturation`, id_client)
 VALUES
