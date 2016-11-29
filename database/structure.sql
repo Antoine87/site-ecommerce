@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS ecommerce.auteurs (
 )ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ecommerce`.`clients`
+-- Table `ecommerce`.`clients`.
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ecommerce`.`clients` (
   `id_client` INT UNSIGNED NOT NULL AUTO_INCREMENT,
