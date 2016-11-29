@@ -13,14 +13,18 @@ CHARACTER SET = utf8 COLLATE = utf8_general_ci;
 USE ecommerce;
 
 -- -----------------------------------------------------
--- Table `ecommerce`.`clients`
+-- Table `ecommerce`.`auteurs`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS ecommerce.auteurs (
   id_auteur INT NOT NULL AUTO_INCREMENT,
   nom_auteur VARCHAR(45) NOT NULL,
   prenom_auteur VARCHAR(45) NOT NULL,
   biographie VARCHAR(250) NOT NULL,
-  PRIMARY KEY (id_auteur))
+  PRIMARY KEY (id_auteur));
+
+-- -----------------------------------------------------
+-- Table `ecommerce`.`clients`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ecommerce`.`clients` (
   `id_client` INT NOT NULL,
   `nom` VARCHAR(45) NULL,
