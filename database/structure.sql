@@ -87,7 +87,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `ecommerce`.`statut_de_commande`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS ecommerce.statut_de_commmande (
+CREATE TABLE IF NOT EXISTS ecommerce.statut_de_commande (
     statut VARCHAR(255),
     id_statut Tinyint unsigned auto_increment,
     PRIMARY KEY (id_statut)
