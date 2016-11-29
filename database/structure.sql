@@ -140,6 +140,15 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_C
 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT ;
 
 
+--------------------------------------------------------
+--  TABLE ecommerce.roles_auteurs
+--------------------------------------------------------
+CREATE TABLE `ecommerce`.`roles_auteurs` (
+  id_role INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY(id_role)
+);
+
+
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('espece');
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('carte bleu');
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('cheque');
