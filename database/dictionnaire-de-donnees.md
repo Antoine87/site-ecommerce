@@ -12,7 +12,7 @@
 - langues (Bruno)
     - langue
     
-- collections
+- collections (Sébastien M)
     - nom de la collection
     - id_editeur (fk)
    
@@ -125,7 +125,7 @@
 # Insertion de données
 
 - 10 - Clients + adresses (Antoine)
-- rôles auteur (auteur, traducteur), langues (français, anglais) et 5 éditeurs (Pascal)'
+- rôles auteur (auteur, traducteur), langues (français, anglais) et 5 éditeurs (Pascal)
     
     
     
