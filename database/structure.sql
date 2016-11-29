@@ -103,9 +103,9 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`Coupon` (
 ENGINE = InnoDB;
 
 
---------------------------------------------------------
+-- ------------------------------------------------------
 --  TABLE ecommerce.mode_de_paiement
---------------------------------------------------------
+-- ------------------------------------------------------
 CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
   id_mode_de_paiement TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   mode_de_paiement VARCHAR(45) NOT NULL,
@@ -114,9 +114,9 @@ CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
 ) ENGINE = InnoDB;
 
 
---------------------------------------------------------
+-- ------------------------------------------------------
 --  TABLE ecommerce.mode_livraison
---------------------------------------------------------
+-- ------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
   `id_mode_livraison` TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `description_mode_livraison` VARCHAR(45) NULL,
@@ -136,9 +136,9 @@ CREATE TABLE `ecommerce`.`editeurs` (
 )ENGINE = Innodb;
 
 
---------------------------------------------------------
+-- ------------------------------------------------------
 --  TABLE ecommerce.roles_auteurs
---------------------------------------------------------
+-- ------------------------------------------------------
 CREATE TABLE `ecommerce`.`roles_auteurs` (
   id_role TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   role VARCHAR(20) NOT NULL,
