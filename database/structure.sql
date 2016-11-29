@@ -81,7 +81,7 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS statut_de_commmande (
     statut VARCHAR(255),
-    id_satut Tinyint unsigned auto_increment
+    id_statut Tinyint unsigned auto_increment,
     PRIMARY KEY (id_statut)
 )ENGINE = InnoDB;
 
