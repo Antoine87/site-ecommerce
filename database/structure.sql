@@ -69,6 +69,8 @@ CREATE TABLE IF NOT EXISTS statut_de_commmande (
     PRIMARY KEY (id_statut)
 )ENGINE = InnoDB;
 
+
+
 -- -----------------------------------------------------
 -- Table `mydb`.`Coupon`
 -- -----------------------------------------------------
