@@ -24,7 +24,7 @@
 - roles_auteurs (Mohamed)
     - role
 
-- livres
+- livres (Pascal)
     - rubrique 
     - traducteur (table association auteurs_livres)
     - langue de l'ouvrage (fk id_langue)
@@ -74,7 +74,7 @@
     - id_client (fk)
     - numéro de téléphone
     
-- paniers
+- paniers   
     - produit (id_livre fk)
     - qt
     - client (id_client fk)
