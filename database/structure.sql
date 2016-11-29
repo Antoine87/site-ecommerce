@@ -87,7 +87,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `ecommerce`.`statut_de_commande`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS ecommerce.statut_de_commande (
+CREATE TABLE IF NOT EXISTS ecommerce.statuts_de_commande (
     statut VARCHAR(20) NOT NULL UNIQUE ,
     id_statut Tinyint unsigned auto_increment,
     PRIMARY KEY (id_statut)
@@ -97,11 +97,12 @@ CREATE TABLE IF NOT EXISTS ecommerce.statut_de_commande (
 -- -----------------------------------------------------
 -- Table `ecommerce`.`Coupon`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ecommerce`.`Coupon` (
+CREATE TABLE IF NOT EXISTS `ecommerce`.`Coupons` (
   `idCoupon` MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `Date_debut` DATE NULL,
   `Date_fin` DATE NULL,
   `Remise` FLOAT NULL,
+  code_coupon VARCHAR(20) NOT NULL UNIQUE,
   PRIMARY KEY (`idCoupon`))
 ENGINE = InnoDB;
 
@@ -109,7 +110,7 @@ ENGINE = InnoDB;
 -- ------------------------------------------------------
 --  TABLE ecommerce.mode_de_paiement
 -- ------------------------------------------------------
-CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
+CREATE TABLE IF NOT EXISTS ecommerce.modes_de_paiement (
   id_mode_de_paiement TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   mode_de_paiement VARCHAR(45) NOT NULL,
   PRIMARY KEY (id_mode_de_paiement),
@@ -120,7 +121,7 @@ CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
 -- ------------------------------------------------------
 --  TABLE ecommerce.mode_livraison
 -- ------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
+CREATE TABLE IF NOT EXISTS `ecommerce`.`modes_livraison` (
   `id_mode_livraison` TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `description_mode_livraison` VARCHAR(45) NULL,
   `tarif_livraison` DECIMAL(5,2) NOT NULL DEFAULT 0.0,
