@@ -107,6 +107,16 @@ CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
   UNIQUE INDEX id_mode_de_paiement_UNIQUE (id_mode_de_paiement ASC))
   ENGINE = InnoDB;
 
+
+CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
+  `id_mode_livraison` INT NOT NULL,
+  `description_mode_livraison` VARCHAR(45) NULL,
+  `tarif_livraison` DECIMAL(2) NULL,
+  `delais_livraison` INT NULL,
+  PRIMARY KEY (`id_mode_livraison`))
+ENGINE = InnoDB;
+
+
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('espece');
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('carte bleu');
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('cheque');
