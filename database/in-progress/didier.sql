@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS ecommerce.commandes (
     ON UPDATE NO ACTION,
   CONSTRAINT fk_commandes_mode_livraison1
     FOREIGN KEY (id_mode_livraison)
-    REFERENCES ecommerce.mode_livraison (id_mode_livraison)
+    REFERENCES ecommerce.modes_livraison (id_mode_livraison)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT fk_commandes_coupons1
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS ecommerce.commandes (
     ON UPDATE NO ACTION,
   CONSTRAINT fk_commandes_statut_de_commande1
     FOREIGN KEY (id_statut)
-    REFERENCES ecommerce.statut_de_commande (id_statut)
+    REFERENCES ecommerce.statuts_de_commande (id_statut)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

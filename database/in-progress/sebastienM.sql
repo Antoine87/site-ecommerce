@@ -1,15 +1,4 @@
--- ----------------------------------------------------
--- Ajout de données pour les statuts de commande
--- ----------------------------------------------------
-# RAZ sur la table
-TRUNCATE ecommerce.statut_de_commande;
-INSERT INTO ecommerce.statut_de_commande (statut)
-VALUES
-('en-cours'),
-('payée'),
-('expédiée'),
-('livrée'),
-('annulée');
+
 
 -- ----------------------------------------------------
 -- Création de la table collection
