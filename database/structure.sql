@@ -79,9 +79,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ecommerce`.`Coupon`
+-- Table `ecommerce`.`statut_de_commmande`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS ecommerce.statut_de_commmande (
+CREATE TABLE IF NOT EXISTS `ecommerce`.`statut_de_commmande` (
     statut VARCHAR(255),
     id_satut Tinyint unsigned auto_increment
     PRIMARY KEY (id_statut)
@@ -103,7 +103,7 @@ ENGINE = InnoDB;
 --------------------------------------------------------
 --  TABLE ecommerce.mode_de_paiement
 --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
+CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_de_paiement` (
   id_mode_de_paiement INT NOT NULL,
   mode_de_paiement VARCHAR(45) NOT NULL,
   PRIMARY KEY (id_mode_de_paiement),
@@ -124,9 +124,9 @@ ENGINE = InnoDB;
 
 
 --------------------------------------------------------
---  TABLE ecommerce.mode_livraison
+--  TABLE ecommerce.roles_auteurs
 --------------------------------------------------------
-CREATE TABLE ecommerce.roles_auteurs (
+CREATE TABLE `ecommerce`.`roles_auteurs` (
   id_role INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY(id_role)
 );
