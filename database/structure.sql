@@ -123,6 +123,23 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
 ENGINE = InnoDB;
 
 
+--------------------------------------------------------
+--  TABLE ecommerce.mode_editeurs
+--------------------------------------------------------
+
+-- Export de données de la table e_commerce.éditeurs : ~3 rows (environ)
+DELETE FROM `éditeurs`;
+ALTER TABLE `éditeurs` DISABLE KEYS ;
+INSERT INTO `éditeurs` (`ID`, `Nom`) VALUES
+	(1, 'MICHEL LAFON'),
+	(2, 'John Tiffany'),
+	(3, 'Carole Neel ');
+ALTER TABLE `éditeurs` ENABLE KEYS ;
+SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') ;
+SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) ;
+SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT ;
+
+
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('espece');
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('carte bleu');
 INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('cheque');
