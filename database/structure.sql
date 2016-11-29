@@ -12,29 +12,6 @@ CHARACTER SET = utf8 COLLATE = utf8_general_ci;
 USE ecommerce;
 
 -- -----------------------------------------------------
--- Table `ecommerce`.`adresses`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ecommerce`.`adresses` (
-  `id_adresse` INT NOT NULL,
-  `adresse` VARCHAR(45) NULL,
-  `code_postal` VARCHAR(5) NULL,
-  `ville` VARCHAR(45) NULL,
-  `adresse_facturation` INT NULL,
-  PRIMARY KEY (`id_adresse`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `ecommerce`.`telephones`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ecommerce`.`telephones` (
-  `id_telephones` INT NOT NULL,
-  `numero_telephone` VARCHAR(15) NULL,
-  PRIMARY KEY (`id_telephones`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `ecommerce`.`clients`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ecommerce`.`clients` (
@@ -44,19 +21,42 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`clients` (
   `email` VARCHAR(100) NULL,
   `mot_de_passe` VARCHAR(45) NULL,
   `date_naissance` DATE NULL,
-  `adresses_id_adresse` INT NOT NULL,
-  `telephones_id_telephones` INT NOT NULL,
-  PRIMARY KEY (`id_client`),
-  INDEX `fk_clients_adresses_idx` (`adresses_id_adresse` ASC),
-  INDEX `fk_clients_telephones1_idx` (`telephones_id_telephones` ASC),
-  CONSTRAINT `fk_clients_adresses`
-    FOREIGN KEY (`adresses_id_adresse`)
-    REFERENCES `ecommerce`.`adresses` (`id_adresse`)
+  PRIMARY KEY (`id_client`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ecommerce`.`telephones`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ecommerce`.`telephones` (
+  `id_telephones` INT NOT NULL,
+  `numero_telephone` VARCHAR(15) NULL,
+  `clients_id_client` INT NOT NULL,
+  PRIMARY KEY (`id_telephones`),
+  INDEX `fk_telephones_clients1_idx` (`clients_id_client` ASC),
+  CONSTRAINT `fk_telephones_clients1`
+    FOREIGN KEY (`clients_id_client`)
+    REFERENCES `ecommerce`.`clients` (`id_client`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_clients_telephones1`
-    FOREIGN KEY (`telephones_id_telephones`)
-    REFERENCES `ecommerce`.`telephones` (`id_telephones`)
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ecommerce`.`adresses`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ecommerce`.`adresses` (
+  `id_adresse` INT NOT NULL,
+  `adresse` VARCHAR(45) NULL,
+  `code_postal` VARCHAR(5) NULL,
+  `ville` VARCHAR(45) NULL,
+  `adresse_facturation` INT NULL,
+  `clients_id_client` INT NOT NULL,
+  PRIMARY KEY (`id_adresse`),
+  INDEX `fk_adresses_clients1_idx` (`clients_id_client` ASC),
+  CONSTRAINT `fk_adresses_clients1`
+    FOREIGN KEY (`clients_id_client`)
+    REFERENCES `ecommerce`.`clients` (`id_client`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -69,15 +69,13 @@ CREATE TABLE IF NOT EXISTS statut_de_commmande (
     PRIMARY KEY (id_statut)
 )ENGINE = InnoDB;
 
-/* creation de la table mode de paiement*/
-CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
-  id_mode_de_paiement INT NOT NULL,
-  mode_de_paiement VARCHAR(45) NOT NULL,
-  PRIMARY KEY (id_mode_de_paiement),
-  UNIQUE INDEX id_mode_de_paiement_UNIQUE (id_mode_de_paiement ASC))
-  ENGINE = InnoDB;
-/* remplissage de la table mode de paiement*/
-INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('espece');
-INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('carte bleu');
-INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('cheque');
-
+-- -----------------------------------------------------
+-- Table `mydb`.`Coupon`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ecommerce`.`Coupon` (
+  `idCoupon` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Date_debut` DATE NULL,
+  `Date_fin` DATE NULL,
+  `Remise` FLOAT NULL,
+  PRIMARY KEY (`idCoupon`))
+ENGINE = InnoDB;
