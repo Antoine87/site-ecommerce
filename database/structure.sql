@@ -100,9 +100,9 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`Coupon` (
 ENGINE = InnoDB;
 
 
---------------------------------------------------------
+-- ------------------------------------------------------
 --  TABLE ecommerce.mode_de_paiement
---------------------------------------------------------
+-- ------------------------------------------------------
 CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
   id_mode_de_paiement INT NOT NULL,
   mode_de_paiement VARCHAR(45) NOT NULL,
@@ -111,9 +111,9 @@ CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
   ENGINE = InnoDB;
 
 
---------------------------------------------------------
+-- ------------------------------------------------------
 --  TABLE ecommerce.mode_livraison
---------------------------------------------------------
+-- ------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
   `id_mode_livraison` INT NOT NULL,
   `description_mode_livraison` VARCHAR(45) NULL,
@@ -123,9 +123,9 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
 ENGINE = InnoDB;
 
 
---------------------------------------------------------
+-- ------------------------------------------------------
 --  TABLE ecommerce.mode_editeurs
---------------------------------------------------------
+-- ------------------------------------------------------
 
 -- Export de données de la table e_commerce.éditeurs : ~3 rows (environ)
 DELETE FROM `éditeurs`;
@@ -140,9 +140,9 @@ SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_C
 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT ;
 
 
---------------------------------------------------------
+-- ------------------------------------------------------
 --  TABLE ecommerce.roles_auteurs
---------------------------------------------------------
+-- ------------------------------------------------------
 CREATE TABLE `ecommerce`.`roles_auteurs` (
   id_role INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY(id_role)
