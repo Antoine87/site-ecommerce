@@ -10,6 +10,7 @@ DROP DATABASE IF EXISTS ecommerce;
 CREATE DATABASE ecommerce
 CHARACTER SET = utf8 COLLATE = utf8_general_ci;
 
+-- utilisation de la bd
 USE ecommerce;
 
 -- ----------------------------------------------
