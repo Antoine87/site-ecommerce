@@ -123,12 +123,16 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
 ENGINE = InnoDB;
 
 
-INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('espece');
-INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('carte bleu');
-INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('cheque');
-
-CREATE TABLE roles_auteurs (
+--------------------------------------------------------
+--  TABLE ecommerce.mode_livraison
+--------------------------------------------------------
+CREATE TABLE ecommerce.roles_auteurs (
   id_role INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY(id_role)
 );
+
+
+INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('espece');
+INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('carte bleu');
+INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('cheque');
 
