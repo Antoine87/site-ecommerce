@@ -1,26 +1,27 @@
 # Dictionnaire de données
 
 
-- auteurs
+- auteurs (Didier)
     - nom
     - prénom
     - biographie
     
-- éditeurs
+- éditeurs (Sébastien)
     - nom
-- langues
+    
+- langues (Bruno)
     - langue
     
 - collections
     - nom de la collection
-    - id_editeur
+    - id_editeur (fk)
    
 - auteurs_livres
     - id_livre (fk)
     - id_auteur (fk)
     - id_role (fk)
 
-- roles_auteurs
+- roles_auteurs (Mohamed)
     - role
 
 - livres
@@ -53,7 +54,7 @@
     - auteur du commentaire (fk id_client)
     - date de création
     
-- clients
+- clients (Antoine)
     - nom
     - prénom
     - adresses postales (voir adresses)
@@ -62,14 +63,14 @@
     - téléphones (voir table téléphones)
     - date de naissance
  
-- adresses 
+- adresses (Antoine)
     - adresse
     - code postal
     - ville
     - adresse_facturation (booléen)
     - id_client (fk)
     
-- téléphones
+- téléphones (Antoine)
     - id_client (fk)
     - numéro de téléphone
     
@@ -78,7 +79,7 @@
     - qt
     - client (id_client fk)
     
-- coupons
+- coupons (Karl)
     - code coupon
     - date début
     - date fin
@@ -102,12 +103,12 @@
     - id_livre (fk)
     - qt
    
-- mode de livraison
+- mode de livraison (Pascal)
     - description
     - tarif
     - délai
     
-- statut de commande
+- statut de commande (Cédric)
     - statut
    
 - paiement
@@ -117,7 +118,7 @@
     - date paiement
     - mode de paiement (id_mode_paiement fk)
     
-- mode de paiement
+- mode de paiement (Mehdi)
     - mode de paiement
     
     
