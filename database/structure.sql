@@ -11,6 +11,25 @@ CHARACTER SET = utf8 COLLATE = utf8_general_ci;
 
 USE ecommerce;
 
+-- ----------------------------------------------
+-- Table langues
+-- ----------------------------------------------
+CREATE TABLE langues (
+id_langue SMALLINT UNSIGNED AUTO_INCREMENT,
+nom_langue VARCHAR(20) NOT NULL,
+  PRIMARY KEY (id_langue)
+) ENGINE = INNODB;
+
+-- -----------------------------------------------------
+-- Table `ecommerce`.`auteurs`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS ecommerce.auteurs (
+  id_auteur INT NOT NULL AUTO_INCREMENT,
+  nom_auteur VARCHAR(45) NOT NULL,
+  prenom_auteur VARCHAR(45) NOT NULL,
+  biographie VARCHAR(250) NOT NULL,
+  PRIMARY KEY (id_auteur));
+
 -- -----------------------------------------------------
 -- Table `ecommerce`.`clients`
 -- -----------------------------------------------------
@@ -62,17 +81,17 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`adresses` (
 ENGINE = InnoDB;
 
 
-
-CREATE TABLE IF NOT EXISTS statut_de_commmande (
+-- -----------------------------------------------------
+-- Table `ecommerce`.`Coupon`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS ecommerce.statut_de_commmande (
     statut VARCHAR(255),
     id_satut Tinyint unsigned auto_increment
     PRIMARY KEY (id_statut)
 )ENGINE = InnoDB;
 
-
-
 -- -----------------------------------------------------
--- Table `mydb`.`Coupon`
+-- Table `ecommerce`.`Coupon`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ecommerce`.`Coupon` (
   `idCoupon` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -81,3 +100,31 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`Coupon` (
   `Remise` FLOAT NULL,
   PRIMARY KEY (`idCoupon`))
 ENGINE = InnoDB;
+
+
+--------------------------------------------------------
+--  TABLE ecommerce.mode_de_paiement
+--------------------------------------------------------
+CREATE TABLE IF NOT EXISTS ecommerce.mode_de_paiement (
+  id_mode_de_paiement INT NOT NULL,
+  mode_de_paiement VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id_mode_de_paiement),
+  UNIQUE INDEX id_mode_de_paiement_UNIQUE (id_mode_de_paiement ASC))
+  ENGINE = InnoDB;
+
+
+--------------------------------------------------------
+--  TABLE ecommerce.mode_livraison
+--------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ecommerce`.`mode_livraison` (
+  `id_mode_livraison` INT NOT NULL,
+  `description_mode_livraison` VARCHAR(45) NULL,
+  `tarif_livraison` DECIMAL(2) NULL,
+  `delais_livraison` INT NULL,
+  PRIMARY KEY (`id_mode_livraison`))
+ENGINE = InnoDB;
+
+
+INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('espece');
+INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('carte bleu');
+INSERT INTO ecommerce.mode_de_paiement (mode_de_paiement) VALUES ('cheque');
