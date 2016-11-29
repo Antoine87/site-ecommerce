@@ -9,9 +9,9 @@ CHARACTER SET = utf8 COLLATE = utf8_general_ci;
 USE ecommerce;
 
 -- ----------------------------------------------
--- Table langues
+-- Table  `ecommerce`.`langues`
 -- ----------------------------------------------
-CREATE TABLE langues (
+CREATE TABLE IF NOT EXISTS `ecommerce`.`langues` (
 id_langue SMALLINT UNSIGNED AUTO_INCREMENT,
 nom_langue VARCHAR(20) NOT NULL,
   PRIMARY KEY (id_langue)
