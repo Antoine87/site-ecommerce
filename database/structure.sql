@@ -12,6 +12,6 @@ CREATE TABLE [IF NOT EXISTS] statut_de_commmande (
     [PRIMARY KEY (statut)]
 )
 [ENGINE=innoDB];
-
-
-
+=======
+CREATE DATABASE ecommerce;
+>>>>>>> origin/master
