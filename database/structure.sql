@@ -4,6 +4,7 @@
 
 DROP DATABASE IF EXISTS ecommerce;
 
+<<<<<<< HEAD
 CREATE DATABASE ecommerce;
 
 
@@ -60,3 +61,16 @@ CREATE TABLE IF NOT EXISTS `ecommerce`.`clients` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+=======
+<<<<<<< HEAD
+CREATE DATABASE ecommerce;
+
+CREATE TABLE [IF NOT EXISTS] statut_de_commmande (
+    statut VARCHAR(255),
+    [PRIMARY KEY (statut)]
+)
+[ENGINE=innoDB];
+=======
+CREATE DATABASE ecommerce;
+>>>>>>> origin/master
+>>>>>>> 9c969701e8f5655d3389f1e57fb4cf0279424b13
