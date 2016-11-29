@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 /****************************************************
 * Structure de données de l'application ecommerce
  ****************************************************/
@@ -16,6 +15,3 @@ CREATE TABLE [IF NOT EXISTS] statut_de_commmande (
 =======
 CREATE DATABASE ecommerce;
 >>>>>>> origin/master
-=======
-
->>>>>>> Stashed changesss
