@@ -2,6 +2,8 @@
 * INSERTIONS DES DONNEES
 ***************************************************************/
 SET FOREIGN_KEY_CHECKS = 0;
+
+USE ecommerce;
 -- ----------------------------------------------------
 -- Ajout de données pour les modes de paiement
 -- ----------------------------------------------------
@@ -29,9 +31,9 @@ VALUES
 TRUNCATE `ecommerce`.`langues`;
 TRUNCATE `ecommerce`.`editeurs`;
 TRUNCATE `ecommerce`.`roles_auteurs`;
-INSERT INTO `langues` (`id_langue`, `nom_langue`) VALUES (NULL, 'français'), (NULL, 'anglais');
-INSERT INTO `editeurs` (`id_editeur`, `nom_editeur`) VALUES (NULL, 'POCKET'), (NULL, 'Albin Michel'), (NULL, 'Le Livre de Poche'), (NULL, 'Gallimard'), (NULL, 'Les Editions Persée');
-INSERT INTO `roles_auteurs` (`id_role`, `role`) VALUES (NULL, 'auteur'), (NULL, 'traducteur');
+INSERT INTO ecommerce.langues (`id_langue`, `nom_langue`) VALUES (NULL, 'français'), (NULL, 'anglais');
+INSERT INTO ecommerce.editeurs (`id_editeur`, `nom_editeur`) VALUES (NULL, 'POCKET'), (NULL, 'Albin Michel'), (NULL, 'Le Livre de Poche'), (NULL, 'Gallimard'), (NULL, 'Les Editions Persée');
+INSERT INTO ecommerce.roles_auteurs (`id_role`, `role`) VALUES (NULL, 'auteur'), (NULL, 'traducteur');
 
 -- ------------------------------------------------------
 --  INSERT `ecommerce`.`clients`
