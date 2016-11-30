@@ -2,6 +2,7 @@
 * INSERTIONS DES DONNEES
 ***************************************************************/
 SET FOREIGN_KEY_CHECKS = 0;
+USE ecommerce;
 -- ----------------------------------------------------
 -- Ajout de données pour les modes de paiement
 -- ----------------------------------------------------
@@ -26,19 +27,19 @@ VALUES
 -- ----------------------------------------------------
 -- Ajout de données pour les rôles des auteurs, les langues et les éditeurs
 -- ----------------------------------------------------
-TRUNCATE `ecommerce`.`langues`;
-TRUNCATE `ecommerce`.`editeurs`;
-TRUNCATE `ecommerce`.`roles_auteurs`;
-INSERT INTO `langues` (`id_langue`, `nom_langue`) VALUES (NULL, 'français'), (NULL, 'anglais');
-INSERT INTO `editeurs` (`id_editeur`, `nom_editeur`) VALUES (NULL, 'POCKET'), (NULL, 'Albin Michel'), (NULL, 'Le Livre de Poche'), (NULL, 'Gallimard'), (NULL, 'Les Editions Persée');
-INSERT INTO `roles_auteurs` (`id_role`, `role`) VALUES (NULL, 'auteur'), (NULL, 'traducteur');
+TRUNCATE ecommerce.langues;
+TRUNCATE ecommerce.editeurs;
+TRUNCATE ecommerce.roles_auteurs;
+INSERT INTO langues (id_langue, nom_langue) VALUES (NULL, 'français'), (NULL, 'anglais');
+INSERT INTO editeurs (id_editeur, nom_editeur) VALUES (NULL, 'POCKET'), (NULL, 'Albin Michel'), (NULL, 'Le Livre de Poche'), (NULL, 'Gallimard'), (NULL, 'Les Editions Persée');
+INSERT INTO roles_auteurs (id_role, role) VALUES (NULL, 'auteur'), (NULL, 'traducteur');
 
 -- ------------------------------------------------------
---  INSERT `ecommerce`.`clients`
+--  INSERT ecommerce.clients
 -- ------------------------------------------------------
-TRUNCATE `ecommerce`.`clients`;
-INSERT INTO `ecommerce`.`clients`
-(`nom`, `prenom`, `email`, `mot_de_passe`, `date_naissance`)
+TRUNCATE ecommerce.clients;
+INSERT INTO ecommerce.clients
+(nom, prenom, email, mot_de_passe, date_naissance)
 VALUES
   ('Sarkozy', 'Sebastien', 'mail@mail.com', 'mdp123', '1990-01-01'),
   ('Hollande', 'Pascal', 'mail@mail.com', 'mdp123', '1970-05-01'),
@@ -48,7 +49,7 @@ VALUES
   ('Pompidou', 'Antoine', 'mail@mail.com', 'mdp123', '1982-01-01');
 
 -- ------------------------------------------------------
---  INSERT `ecommerce`.`auteurs`
+--  INSERT ecommerce.auteurs
 -- ------------------------------------------------------
 TRUNCATE ecommerce.auteurs;
 INSERT INTO ecommerce.auteurs
@@ -62,7 +63,7 @@ VALUES
   ('Zola', 'Emile', 'Émile Édouard Charles Antoine Zola naît 10 rue Saint-Joseph à Paris, le 2 avril 1840, d\'un père italien et d\'une mère française');
 
 -- ------------------------------------------------------
---  INSERT `ecommerce`.formats
+--  INSERT ecommerce.formats
 -- ------------------------------------------------------
 TRUNCATE ecommerce.formats;
 INSERT INTO ecommerce.formats (format) VALUES ('Broché');
