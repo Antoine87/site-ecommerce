@@ -1,3 +1,6 @@
+-- ----------------------------------
+-- creation table ligne commandes
+-- ----------------------------------
 CREATE TABLE ecommerce.lignes_commandes(
 id_commande INT UNSIGNED NOT NULL,
 id_livre INT UNSIGNED NOT NULL,
