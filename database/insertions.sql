@@ -1,7 +1,7 @@
 /**************************************************************
 * INSERTIONS DES DONNEES
 ***************************************************************/
-
+SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------------------------------
 -- Ajout de données pour les modes de paiement
 -- ----------------------------------------------------
@@ -60,3 +60,15 @@ VALUES
   ('Maupin', 'armistead', 'Ses parents sont Diana Jane (née Barton) et Armistead Jones Maupin'),
   ('Asimov', 'Isaac', 'Issu d’une famille juive, fils de Judah Asimov et de Anna Rachel Berman, Isaac naquit à Petrovitchi'),
   ('Zola', 'Emile', 'Émile Édouard Charles Antoine Zola naît 10 rue Saint-Joseph à Paris, le 2 avril 1840, d\'un père italien et d\'une mère française');
+
+-- ------------------------------------------------------
+--  INSERT `ecommerce`.formats
+-- ------------------------------------------------------
+TRUNCATE ecommerce.formats;
+INSERT INTO ecommerce.formats (format) VALUES ('Broché');
+INSERT INTO ecommerce.formats (format) VALUES ('Relié');
+INSERT INTO ecommerce.formats (format) VALUES ('Ebook Kindle');
+INSERT INTO ecommerce.formats (format) VALUES ('Poche');
+INSERT INTO ecommerce.formats (format) VALUES ('Livre audio');
+
+SET FOREIGN_KEY_CHECKS = 1;
