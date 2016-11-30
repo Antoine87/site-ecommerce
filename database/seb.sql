@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS`ecommerce`.`paiement` (
 
 CREATE TABLE `paiement` (
 	`id_commande` TINYTEXT NULL,
-	`id_client` INT(10) NULL DEFAULT NULL,
+	`id_client`  TINYINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`montant` DECIMAL(10,0) NULL DEFAULT NULL,
 	`date de paiement` DATETIME NULL DEFAULT NULL,
 	`id_mode_de_paiement` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
