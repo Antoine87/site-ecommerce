@@ -15,7 +15,7 @@ CREATE TABLE `paiement` (
 	UNIQUE INDEX `id_mode_de_paiement` (`id_mode_de_paiement`),
 	CONSTRAINT `FK_paiement_mode_de_paiement` FOREIGN KEY (`id_mode_de_paiement`) REFERENCES `mode_de_paiement` (`id_mode_de_paiement`),
 	CONSTRAINT `FK_paiement_client` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id_client`),
-	CONSTRAINT `FK_paiement_mode_de_paiement` FOREIGN KEY (`id_mode_de_paiement`) REFERENCES `mode_de_paiement` (`id_mode_de_paiement`)
+	CONSTRAINT `FK_paiement_commande` FOREIGN KEY (`id_commande`) REFERENCES `commande` (`id_commande`)
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
