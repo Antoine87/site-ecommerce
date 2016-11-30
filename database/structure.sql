@@ -347,4 +347,5 @@ CREATE TABLE `paiements` (
   ENGINE=InnoDB
 ;
 
-SET FOREIGN_KEY_CHECKS = 1;
+
+
