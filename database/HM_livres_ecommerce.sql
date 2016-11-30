@@ -24,12 +24,8 @@ CREATE TABLE IF NOT EXISTS ecommerce.livres (
   prix DECIMAL(5,2) UNSIGNED NOT NULL,
   stock INT UNSIGNED NOT NULL,
   edition VARCHAR(70) NOT NULL,
-  PRIMARY KEY (id_livres, id_langue, id_editeur, id_collection),
-  INDEX fk_livres_langues1_idx (`id_langue` ASC),
-  INDEX fk_livres_editeurs1_idx (`id_editeur` ASC),
-  UNIQUE INDEX ISBN_11_UNIQUE (ISBN_11 ASC),
-  UNIQUE INDEX ISBN_13_UNIQUE (ISBN_13 ASC),
-  UNIQUE INDEX id_livres_UNIQUE (id_livres ASC),
+  PRIMARY KEY (id_livres),
+  UNIQUE INDEX ISBN_13 (ISBN_13 ASC),
   CONSTRAINT fk_livres_langues
     FOREIGN KEY (id_langue)
     REFERENCES ecommerce.langues (id_langue)
