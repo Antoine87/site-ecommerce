@@ -63,6 +63,7 @@ CREATE TABLE IF NOT EXISTS ecommerce.formats(
   format VARCHAR(30) NOT NULL
 )ENGINE = InnoDB;
 
+TRUNCATE ecommerce.formats;
 INSERT INTO ecommerce.formats (format) VALUES ('Broché');
 INSERT INTO ecommerce.formats (format) VALUES ('Relié');
 INSERT INTO ecommerce.formats (format) VALUES ('Ebook Kindle');
