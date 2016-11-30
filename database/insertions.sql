@@ -40,9 +40,9 @@ TRUNCATE `ecommerce`.`clients`;
 INSERT INTO `ecommerce`.`clients`
 (`nom`, `prenom`, `email`, `mot_de_passe`, `date_naissance`)
 VALUES
-  ('Sarkozy', 'Sebastien', 'mail@mail.com', 'mdp123', '2000-01-01'),
-  ('Hollande', 'Pascal', 'mail@mail.com', 'mdp123', '2015-05-01'),
-  ('Obama', 'Didier', 'mail@mail.com', 'mdp123', '2006-10-01'),
-  ('Fillon', 'Karl', 'mail@mail.com', 'mdp123', '1995-01-01'),
-  ('Mitterand', 'Sebastien', 'mail@mail.com', 'mdp123', '2009-09-01'),
-  ('Pompidou', 'Antoine', 'mail@mail.com', 'mdp123', '2005-01-01');
+  ('Sarkozy', 'Sebastien', 'mail@mail.com', 'mdp123', '1990-01-01'),
+  ('Hollande', 'Pascal', 'mail@mail.com', 'mdp123', '1970-05-01'),
+  ('Obama', 'Didier', 'mail@mail.com', 'mdp123', '1925-10-01'),
+  ('Fillon', 'Karl', 'mail@mail.com', 'mdp123', '1950-01-01'),
+  ('Mitterand', 'Sebastien', 'mail@mail.com', 'mdp123', '1968-09-01'),
+  ('Pompidou', 'Antoine', 'mail@mail.com', 'mdp123', '1982-01-01');
