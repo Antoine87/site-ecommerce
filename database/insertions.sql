@@ -73,3 +73,51 @@ INSERT INTO ecommerce.formats (format) VALUES ('Poche');
 INSERT INTO ecommerce.formats (format) VALUES ('Livre audio');
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+-- ------------------------------------------------------
+--  IMPORTATION DES LIVRES depuis un fichier csv
+-- ------------------------------------------------------
+LOAD DATA INFILE
+  'C:\\Users\\formation\\Documents\\PHP\\projet-ecommerce-php\\database\\data-source\\livres.csv'
+INTO TABLE livres
+FIELDS
+TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES
+TERMINATED BY '\r\n'
+IGNORE 1 LINES
+
+(titre,rubrique,id_langue,resume,
+ table_des_matieres,accroche,@dateParution,id_editeur,
+ id_collection,@dimensions,poids,nb_pages,id_format,
+ ISBN_11,ISBN_13,@prix,stock,couverture,edition)
+SET
+  prix= REPLACE(@prix,",","."),
+  date_parution=str_to_date(@dateParution,'%d/%m/%y');
+
+-- ------------------------------------------------------
+--  INSERTION DES AUTEURS POUR LES LIVRES
+-- ------------------------------------------------------
+INSERT INTO auteurs_livres
+(id_livre, id_auteur, id_role) VALUES
+  (1,2,1), (2,3,1), (3,5,1), (4,5,1), (5,1,1),
+  (6,4,1), (7,6,1), (8,1,1), (9,6,1), (10,4,1),
+  (11,3,1), (12,4,1), (13,3,1), (14,3,1), (15,5,1),
+  (16,5,1), (17,5,1), (18,2,1), (19,1,1), (20,5,1),
+  (21,2,1), (22,5,1), (23,6,1), (24,2,1), (25,2,1);
+
+-- Autre méthode d'insertion d'auteurs avec attribution aléatoire
+/*
+INSERT INTO auteurs_livres
+(id_livre, id_auteur, id_role)
+  (
+    SELECT
+      id_livre,
+      (SELECT id_auteur FROM auteurs ORDER BY RAND() LIMIT 1) as id_auteur,
+      1 as id_role
+    FROM livres
+  );
+*/
+
+
