@@ -16,6 +16,13 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_client_adresse`(
 )
   BEGIN
 
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+      ROLLBACK;
+    END;
+
+    START TRANSACTION;
+
     -- variable de session pour stocker l'id client généré
     SET @idClient = NULL;
 
@@ -39,6 +46,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_client_adresse`(
           @idClient
       );
     END IF;
+
+    COMMIT;
 
   END$$
 
@@ -99,8 +108,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_adresse`(
     DECLARE valid TINYINT DEFAULT 0;
 
     SET valid = p_adresse IS NOT NULL
+                AND TRIM(p_adresse) != ''
                 AND p_codePostal IS NOT NULL
+                AND TRIM(p_codePostal) != ''
                 AND p_ville IS NOT NULL
+                AND TRIM(p_ville) != ''
                 AND p_idClient IS NOT NULL;
 
     IF valid THEN
@@ -116,9 +128,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_adresse`(
       VALUES
         (p_adresse, p_codePostal, p_ville,
          p_estAdresseFacturation, p_idClient);
+
+    ELSE
+      SIGNAL SQLSTATE '45000';
     END IF;
 
   END$$
 
 DELIMITER ;
+
+
 
