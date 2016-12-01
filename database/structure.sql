@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS ecommerce.commandes (
   date_livraison DATE ,
   id_client INT UNSIGNED NOT NULL,
   id_mode_livraison TINYINT UNSIGNED NOT NULL,
-  id_coupon MEDIUMINT UNSIGNED NOT NULL,
+  id_coupon MEDIUMINT UNSIGNED,
   id_adresse INT UNSIGNED NOT NULL,
   id_statut TINYINT UNSIGNED NOT NULL,
   PRIMARY KEY (num_commande),
