@@ -1,3 +1,4 @@
 .idea/*
 vendors/*
 bower_components/*
+web/dependencies/*
