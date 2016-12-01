@@ -15,41 +15,62 @@ CREATE PROCEDURE ecommerce.insert_nouveau_client (
     IN p_adresse VARCHAR(45),
     IN p_codePostal VARCHAR(5),
     IN p_ville VARCHAR(45),
-    IN p_estAdresseFacturation BIT(1)
+    IN p_estAdresseFacturation BIT(1),
+    OUT p_erreur BIT(1),
+    OUT p_message VARCHAR(255)
 )
 BEGIN
-    /* Insertion table clients */
-    INSERT INTO ecommerce.clients
-        (nom, prenom, email, mot_de_passe, date_naissance)
-    VALUES (
-        p_nom,
-        p_prenom,
-        p_email,
-        p_motDePasse,
-        p_dateNaissance
-    );
+    DECLARE v_id_client INT;
 
-    /* Récupération de l'id du client insérer */
-    SET @idClient := LAST_INSERT_ID();
+    IF p_nom IS NULL THEN
 
-    /* Insertion table telephones */
-    INSERT INTO ecommerce.telephones
-        (numero_telephone, id_client)
-    VALUES (
-        p_numeroTelephone,
-        @idClient
-    );
+        SET p_erreur := 1;
+        SET p_message := 'Le nom ne peut être NULL';
 
-    /* Insertion table adresses */
-    INSERT INTO ecommerce.adresses
-        (adresse, code_postal, ville, est_adresse_facturation, id_client)
-    VALUES (
-        p_adresse,
-        p_codePostal,
-        p_ville,
-        p_estAdresseFacturation,
-        @idClient
-    );
+    ELSE IF p_prenom IS NULL THEN
+
+        SET p_erreur := 1;
+        SET p_message := 'Le prenom ne peut être NULL';
+
+    ELSE
+
+        /* Insertion table clients */
+        INSERT INTO ecommerce.clients
+            (nom, prenom, email, mot_de_passe, date_naissance)
+        VALUES (
+            UCASE(p_nom),
+            p_prenom,
+            p_email,
+            p_motDePasse,
+            p_dateNaissance
+        );
+
+        /* Récupération de l'id du client insérer */
+        SET v_id_client := LAST_INSERT_ID();
+
+        /* Insertion table telephones */
+        INSERT INTO ecommerce.telephones
+            (numero_telephone, id_client)
+        VALUES (
+            p_numeroTelephone,
+            v_id_client
+        );
+
+        /* Insertion table adresses */
+        INSERT INTO ecommerce.adresses
+            (adresse, code_postal, ville, est_adresse_facturation, id_client)
+        VALUES (
+            p_adresse,
+            p_codePostal,
+            p_ville,
+            p_estAdresseFacturation,
+            v_id_client
+        );
+
+        SET p_erreur := 0;
+        SET p_message := 'OK';
+
+    END IF;
 END $$
 
 DELIMITER ;
