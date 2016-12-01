@@ -27,7 +27,7 @@ BEGIN
         SET p_erreur := 1;
         SET p_message := 'Le nom ne peut être NULL';
 
-    ELSE IF p_prenom IS NULL THEN
+    ELSEIF p_prenom IS NULL THEN
 
         SET p_erreur := 1;
         SET p_message := 'Le prenom ne peut être NULL';
