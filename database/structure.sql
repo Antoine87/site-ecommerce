@@ -265,24 +265,23 @@ CREATE TABLE ecommerce.lignes_commandes(
 CREATE TABLE IF NOT EXISTS ecommerce.livres (
   id_livre INT UNSIGNED NOT NULL AUTO_INCREMENT,
   rubrique VARCHAR(70) NOT NULL,
-  titre VARCHAR(70) NOT NULL,
+  titre VARCHAR(120) NOT NULL,
   id_langue TINYINT(3) UNSIGNED NOT NULL,
   resume TEXT NOT NULL,
-  table_des_matieres VARCHAR(45) NOT NULL,
-  accroche TEXT NULL,
+  table_des_matieres TEXT,
+  accroche TEXT,
   date_parution DATE NOT NULL,
   id_editeur MEDIUMINT(8) UNSIGNED NOT NULL,
   id_collection MEDIUMINT UNSIGNED,
   id_format TINYINT UNSIGNED NOT NULL,
-  dimension_h TINYINT UNSIGNED NOT NULL DEFAULT 0,
-  dimension_l TINYINT UNSIGNED NOT NULL DEFAULT 0,
-  dimension_p TINYINT UNSIGNED NOT NULL DEFAULT 0,
-  poids TINYINT UNSIGNED NOT NULL DEFAULT 0,
-  nb_pages INT UNSIGNED NOT NULL,
-  format VARCHAR(45) NOT NULL,
-  ISBN_11 VARCHAR(11) NOT NULL,
-  ISBN_13 VARCHAR(13) NOT NULL,
-  couverture VARCHAR(200) NULL,
+  dimension_h TINYINT UNSIGNED DEFAULT 0,
+  dimension_l TINYINT UNSIGNED DEFAULT 0,
+  dimension_p TINYINT UNSIGNED DEFAULT 0,
+  poids SMALLINT UNSIGNED DEFAULT 0,
+  nb_pages INT UNSIGNED,
+  ISBN_11 VARCHAR(11),
+  ISBN_13 VARCHAR(14),
+  couverture VARCHAR(200),
   prix DECIMAL(5,2) UNSIGNED NOT NULL,
   stock INT UNSIGNED NOT NULL,
   edition VARCHAR(70) NOT NULL,
@@ -326,6 +325,33 @@ CREATE TABLE IF NOT EXISTS ecommerce.formats(
 )ENGINE = InnoDB;
 
 -- -----------------------------------------------------
+-- Table `ecommerce`.`auteurs_livres`
+-- -----------------------------------------------------
+CREATE TABLE `auteurs_livres` (
+  `id_livre` INT UNSIGNED NOT NULL,
+  `id_auteur` MEDIUMINT UNSIGNED NOT NULL,
+  `id_role` TINYINT UNSIGNED NOT NULL,
+
+
+  PRIMARY KEY (id_livre, id_auteur, id_role),
+
+  CONSTRAINT `FK_auteurs_livres_livre`
+  FOREIGN KEY (`id_livre`)
+  REFERENCES `livres` (`id_livre`),
+
+  CONSTRAINT `FK_auteurs_livres_auteur`
+  FOREIGN KEY (`id_auteur`)
+  REFERENCES `auteurs` (`id_auteur`),
+
+  CONSTRAINT `FK_auteurs_livres_role`
+  FOREIGN KEY (`id_role`)
+  REFERENCES `roles_auteurs` (`id_role`)
+
+)
+  ENGINE=InnoDB
+;
+
+-- -----------------------------------------------------
 -- Table `ecommerce`.`paiements`
 -- -----------------------------------------------------
 CREATE TABLE `paiements` (
@@ -347,5 +373,4 @@ CREATE TABLE `paiements` (
   ENGINE=InnoDB
 ;
 
-
-
+SET FOREIGN_KEY_CHECKS = 1;
