@@ -27,6 +27,32 @@
             <ul class="nav navbar-nav">
                 <li><a href="#">catalogue</a></li>
                 <li><a href="#">mon compte</a></li>
+
+                <!-- liste des cruds -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       role="button" aria-haspopup="true" aria-expanded="false">CRUD
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">auteurs</a></li>
+                        <li><a href="#">roles</a></li>
+                        <li><a href="#">éditeurs</a></li>
+                        <li><a href="#">langues</a></li>
+                        <li><a href="#">collections</a></li>
+                        <li><a href="#">coupons</a></li>
+                        <li><a href="#">modes de livraison</a></li>
+                        <li><a href="#">statuts de commande</a></li>
+                        <li><a href="#">mode de paiement</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">commentaires</a></li>
+                        <li><a href="#">livres</a></li>
+                        <li><a href="#">clients (avec adresse et tel)</a></li>
+                        <li><a href="#">commandes</a></li>
+                        <li><a href="#">paiements</a></li>
+                    </ul>
+                </li>
+
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
