@@ -325,6 +325,33 @@ CREATE TABLE IF NOT EXISTS ecommerce.formats(
 )ENGINE = InnoDB;
 
 -- -----------------------------------------------------
+-- Table `ecommerce`.`auteurs_livres`
+-- -----------------------------------------------------
+CREATE TABLE `auteurs_livres` (
+  `id_livre` INT UNSIGNED NOT NULL,
+  `id_auteur` MEDIUMINT UNSIGNED NOT NULL,
+  `id_role` TINYINT UNSIGNED NOT NULL,
+
+
+  PRIMARY KEY (id_livre, id_auteur, id_role),
+
+  CONSTRAINT `FK_auteurs_livres_livre`
+  FOREIGN KEY (`id_livre`)
+  REFERENCES `livres` (`id_livre`),
+
+  CONSTRAINT `FK_auteurs_livres_auteur`
+  FOREIGN KEY (`id_auteur`)
+  REFERENCES `auteurs` (`id_auteur`),
+
+  CONSTRAINT `FK_auteurs_livres_role`
+  FOREIGN KEY (`id_role`)
+  REFERENCES `roles_auteurs` (`id_role`)
+
+)
+  ENGINE=InnoDB
+;
+
+-- -----------------------------------------------------
 -- Table `ecommerce`.`paiements`
 -- -----------------------------------------------------
 CREATE TABLE `paiements` (
@@ -346,5 +373,4 @@ CREATE TABLE `paiements` (
   ENGINE=InnoDB
 ;
 
-
-
+SET FOREIGN_KEY_CHECKS = 1;
