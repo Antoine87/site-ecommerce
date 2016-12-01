@@ -2,7 +2,8 @@
 -- Procedure ecommerce.insert_nouveau_client()
 --
 -- Ajoute un client avec son adresse et son numéro de téléphone.
--- Vérifie si le nom ou le prénom n'est pas NULL
+-- - Vérifie si le nom ou le prénom n'est pas NULL
+-- - Vérifie si le client existe déjà à partir de l'email
 --
 -- Retourne 1 dans la variable p_erreur si la vérification à
 -- échoué avec un message d'erreur dans la variable p_message.
@@ -21,8 +22,8 @@ CREATE PROCEDURE ecommerce.insert_nouveau_client (
     IN p_adresse VARCHAR(45),
     IN p_codePostal VARCHAR(5),
     IN p_ville VARCHAR(45),
-    IN p_estAdresseFacturation BIT(1),
-    OUT p_erreur BIT(1),
+    IN p_estAdresseFacturation TINYINT,
+    OUT p_erreur TINYINT,
     OUT p_message VARCHAR(255)
 )
 BEGIN
@@ -37,6 +38,13 @@ BEGIN
 
         SET p_erreur := 1;
         SET p_message := 'Le prenom ne peut être NULL';
+
+    ELSEIF (
+        SELECT 1 FROM ecommerce.clients WHERE clients.email = p_email LIMIT 1
+    ) IS NOT NULL THEN
+
+        SET p_erreur := 1;
+        SET p_message := 'Le client exist déjà';
 
     ELSE
 
