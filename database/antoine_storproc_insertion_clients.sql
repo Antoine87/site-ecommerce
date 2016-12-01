@@ -5,7 +5,7 @@
 -- Vérifie si le nom ou le prénom n'est pas NULL
 --
 -- Retourne 1 dans la variable p_erreur si la vérification à
--- réussi, sinon un message d'erreur dans la variable p_message.
+-- échoué avec un message d'erreur dans la variable p_message.
 -- --------------------------------------------------------------
 DROP PROCEDURE IF EXISTS ecommerce.insert_nouveau_client;
 
