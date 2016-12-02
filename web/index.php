@@ -1,6 +1,8 @@
 <?php
 define("ROOT_PATH", dirname(__DIR__));
 
+include ROOT_PATH."/src/config/config.php";
+include ROOT_PATH."/lib/lib-pdo.php";
 include ROOT_PATH."/lib/framework/lib-mvc.php";
 
 //Récupération du paramètre page
