@@ -79,7 +79,8 @@ SET FOREIGN_KEY_CHECKS = 1;
 --  IMPORTATION DES LIVRES depuis un fichier csv
 -- ------------------------------------------------------
 LOAD DATA INFILE
-  'C:\\Users\\formation\\Documents\\PHP\\projet-ecommerce-php\\database\\data-source\\livres.csv'
+  -- 'C:\\Users\\formation\\Documents\\PHP\\projet-ecommerce-php\\database\\data-source\\livres.csv'
+      '/Users/MedProd/Documents/#programmes/PHP/site-ecommerce/database/data-source/livres.csv'
 INTO TABLE livres
 FIELDS
 TERMINATED BY ';'
