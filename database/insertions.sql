@@ -77,7 +77,7 @@ INSERT INTO ecommerce.formats (format) VALUES ('Livre audio');
 -- ------------------------------------------------------
 TRUNCATE  livres;
 LOAD DATA INFILE
-  'C:\\Users\\formation\\Documents\\PHP\\projet-ecommerce-php\\database\\data-source\\livres.csv'
+  'C:\\Users\\Administrateur.FORMATI-2QSU3VN\\Documents\\PHP\\projet-ecommerce-php\\database\\data-source\\livres.csv'
 INTO TABLE livres
 FIELDS
 TERMINATED BY ';'
