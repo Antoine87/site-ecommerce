@@ -12,19 +12,20 @@
 - langues (Bruno)
     - langue
     
-- collections
+- collections (Sébastien M)
     - nom de la collection
     - id_editeur (fk)
    
-- auteurs_livres
-    - id_livre (fk)
+- auteurs_livres (Mohamed)
+    - id_livre (fk) INT UNSIGNED NOT NULL
     - id_auteur (fk)
     - id_role (fk)
 
 - roles_auteurs (Mohamed)
     - role
 
-- livres
+- livres (Mehdi)
+    - titre
     - rubrique 
     - traducteur (table association auteurs_livres)
     - langue de l'ouvrage (fk id_langue)
@@ -46,7 +47,7 @@
     - stock
     - édition
     
-- commentaires livres
+- commentaires livres (Cédric)
     - note
     - texte
     - titre du commentaire
@@ -74,7 +75,7 @@
     - id_client (fk)
     - numéro de téléphone
     
-- paniers
+- paniers   (Karl)
     - produit (id_livre fk)
     - qt
     - client (id_client fk)
@@ -85,7 +86,7 @@
     - date fin
     - remise
     
-- commandes
+- commandes (Didier)
     - numéro de commande
     - client (id_client fk)
     - produits (voir table lignes_commandes)
@@ -98,7 +99,7 @@
     - date d'expédition
     - date de livraison
     
-- lignes_commandes
+- lignes_commandes (Bruno)
     - id_commande (fk)
     - id_livre (fk)
     - qt
@@ -111,7 +112,7 @@
 - statut de commande (Cédric)
     - statut
    
-- paiement
+- paiement (Sébastien)
     - commande (id_commande fk)
     - client (id_client fk)
     - montant
@@ -120,6 +121,11 @@
     
 - mode de paiement (Mehdi)
     - mode de paiement
+    
+# Insertion de données
+
+- 10 - Clients + adresses (Antoine)
+- rôles auteur (auteur, traducteur), langues (français, anglais) et 5 éditeurs (Pascal)
     
     
     
