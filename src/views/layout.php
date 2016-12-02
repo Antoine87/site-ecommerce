@@ -25,7 +25,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">catalogue</a></li>
+                <li><a href="/catalogue">catalogue</a></li>
                 <li><a href="#">mon compte</a></li>
 
                 <!-- liste des cruds -->
@@ -35,7 +35,7 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">auteurs</a></li>
+                        <li><a href="/auteur">auteurs</a></li>
                         <li><a href="#">roles</a></li>
                         <li><a href="#">éditeurs</a></li>
                         <li><a href="#">langues</a></li>
