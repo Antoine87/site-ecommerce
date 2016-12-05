@@ -37,7 +37,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="#">auteurs</a></li>
                         <li><a href="#">roles</a></li>
-                        <li><a href="#">éditeurs</a></li>
+                        <li><a href="/editeurs?action=select">éditeurs</a></li>
                         <li><a href="#">langues</a></li>
                         <li><a href="#">collections</a></li>
                         <li><a href="#">coupons</a></li>
