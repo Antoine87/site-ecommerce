@@ -5,7 +5,7 @@
 
 <div class="pull-right">
 
-    <a class="btn btn-info  btn-lg btn-block" href="/auteurs?action=new" type="button" >
+    <a class="btn btn-info btn-lg btn-block" href="/auteurs?action=new" type="button" >
         Ajouter un auteur
     </a>
 </div>
