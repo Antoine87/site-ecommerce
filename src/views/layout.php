@@ -25,7 +25,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">catalogue</a></li>
+                <li><a href="/catalogue">catalogue</a></li>
                 <li><a href="#">mon compte</a></li>
 
                 <!-- liste des cruds -->
@@ -47,7 +47,7 @@
                         <li role="separator" class="divider"></li>
                         <li><a href="#">commentaires</a></li>
                         <li><a href="#">livres</a></li>
-                        <li><a href="#">clients (avec adresse et tel)</a></li>
+                        <li><a href="/client">clients (avec adresse et tel)</a></li>
                         <li><a href="#">commandes</a></li>
                         <li><a href="#">paiements</a></li>
                     </ul>
