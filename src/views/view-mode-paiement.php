@@ -1,17 +1,19 @@
 <h2 class="text-center">mode de paiement</h2>
 
-<div class="col-md-offset-4 col-md-4">
+<div class="col-md-offset-3 col-md-6">
 
    <table class="table">
 
        <tbody>
 <?php foreach ($modePaiement as $mode):?>
 <tr>
-    <td class="col-md-6" id="paiement">
-        <?=$mode['mode_de_paiement']?></td>
-        <td><a href="/mode-paiement?delete=<?=$mode['id_mode_de_paiement']?>"><span class="glyphicon glyphicon-remove-circle pull-right"></span></a>
+    <td class="col-md-4" id="paiement">
+        <?=$mode['mode_de_paiement']?>
+    </td>
+    <td>
+        <a style="padding-left:30px" href="/mode-paiement?delete=<?=$mode['id_mode_de_paiement']?>"><span class="glyphicon glyphicon-remove-circle pull-right"></span></a>
         <a class="modifier" value="<?=$mode['id_mode_de_paiement']?>"><span class="glyphicon glyphicon-pencil pull-right"></span></a>
-        </td>
+    </td>
 
 </tr>
 
@@ -21,8 +23,10 @@
     <td >
     <form class="form-inline" method="post" action="index.php?page=mode-paiement">
         <div class="form-group">
-            <label for="modePaiement">ajouter</label>
-            <input class="form-control" type="text" id="modePaiement" name="newModePaiement" value="">
+            <label  class="control-label col-md-4" for=" modePaiement">Nouveau</label>
+            <div class="col-md-8">
+                <input class="form-control" type="text" id="modePaiement" name="newModePaiement" value="">
+            </div>
         </div>
     </td>
     <td>
@@ -40,6 +44,8 @@
 
        </tbody>
    </table>
+
+    <h4 id="message" class="text-center text-info"><?=$message?></h4>
 
 
 </div>
@@ -97,6 +103,7 @@
 
             $(this).css('background-color','#E8EAF6');
                 $(this).children().children().show();
+                    //$(this).children().children().delay(300).animate({"transform": "scale(2)"});
 
 
         },
@@ -141,6 +148,11 @@
             })
 
         });
+
+        if ($("#message")){
+
+            $("#message").delay(2000).animate({opacity:"0"},"slow");
+        }
 
     });
 </script>
