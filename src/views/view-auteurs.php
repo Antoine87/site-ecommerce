@@ -3,37 +3,39 @@
 </div>
 
 
-<div class="col-md-3">
-    <a      class="btn btn-primary btn-block"
-            href="/auteurs?action=new" type="button" >
+<div class="pull-right">
+
+    <a class="btn btn-info  btn-lg btn-block" href="/auteurs?action=new" type="button" >
         Ajouter un auteur
     </a>
 </div>
 
-
+<div>
 <table class="table table-bordered table-striped table-responsive">
 
-    <tr>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Biographie</th>
-        <th>Actions</th>
+    <tr >
+        <th class="text-center">Prénom</th>
+        <th class="text-center">Nom</th>
+        <th class="text-center">Biographie</th>
+        <th class="text-center">Actions</th>
     </tr>
 
     <?php foreach ($rows as $auteur): ?>
         <tr>
-            <td><?=$auteur->nom_auteur?></td>
-            <td><?=$auteur->prenom_auteur?></td>
-            <td><?=$auteur->biographie?></td>
-            <td>
-                <a href="/auteurs?action=delete&idAuteur=<?=$auteur->id_auteur?>" class="glyphicon glyphicon-trash">
+            <td width=15% class="text-center"><?=$auteur->prenom_auteur?></td>
+            <td width=15% class="text-center"><?=$auteur->nom_auteur?></td>
+            <td width=55%><?=$auteur->biographie?></td>
+            <td width=15% class="text-center">
+                <a href="/auteurs?action=update&idAuteur=<?=$auteur->id_auteur?>" class="glyphicon glyphicon-pencil"></a>
 
-                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="/auteurs?action=update&idAuteur=<?=$auteur->id_auteur?>" class="glyphicon glyphicon-pencil">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                </a>
+                <a href="/auteurs?action=delete&idAuteur=<?=$auteur->id_auteur?>" class="glyphicon glyphicon-trash"></a>
+
             </td>
         </tr>
     <?php endforeach; ?>
 
 </table>
+
+</div>
