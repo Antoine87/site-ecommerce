@@ -9,8 +9,8 @@
 <tr>
     <td class="col-md-6" id="paiement">
         <?=$mode['mode_de_paiement']?>
-        <a href="/mode-paiement?delete=<?=$mode['id_mode_de_paiement']?>" class="glyphicon glyphicon-remove-circle pull-right"></a>
-        <a href="#" id="modifier" value="<?=$mode['id_mode_de_paiement']?>"  class="glyphicon glyphicon-pencil pull-right"></a>
+        <a href="/mode-paiement?delete=<?=$mode['id_mode_de_paiement']?>" ><span class="glyphicon glyphicon-remove-circle pull-right"></span></a>
+        <a class="modifier" value="<?=$mode['id_mode_de_paiement']?>"  ><span class="glyphicon glyphicon-pencil pull-right"></span></a>
 
     </td>
 </tr>
@@ -89,20 +89,18 @@
             $("tr").not("#notHover").not("#formAjoute").hover(function () {
 
             $(this).css('background-color','#E0E0E0');
-                $(this).children().children().show(100);
+                $(this).children().children().show();
 
         },
         function () {
-            $(this).css('background-color','white');
-            $(this).children().children().hide(100);
+            $(this).css('background-color','transparent');
+            $(this).children().children().hide();
         });};
 
         $trHover();
 
-
-
-        $("#modifier").click(function () {
-
+        $(".modifier").click(function (e) {
+            e.preventDefault();
 
             var $text = $(this).parent().text();
             var $id= $(this).attr('value');
