@@ -1,9 +1,9 @@
 <div class="col-md-6 col-md-offset-3">
 
 
-   <!-- <div class="alert-danger">
+    <div class="alert-danger">
         <?=$errorMessage?>
-    </div>-->
+    </div>
 
     <h2><?=$formTitle?></h2>
     <form method="post" action="/auteurs">
