@@ -337,15 +337,21 @@ CREATE TABLE `auteurs_livres` (
 
   CONSTRAINT `FK_auteurs_livres_livre`
   FOREIGN KEY (`id_livre`)
-  REFERENCES `livres` (`id_livre`),
+  REFERENCES `livres` (`id_livre`)
+  ON DELETE CASCADE
+    ON UPDATE CASCADE,
 
   CONSTRAINT `FK_auteurs_livres_auteur`
   FOREIGN KEY (`id_auteur`)
-  REFERENCES `auteurs` (`id_auteur`),
+  REFERENCES `auteurs` (`id_auteur`)
+  ON DELETE CASCADE
+    ON UPDATE CASCADE,
 
   CONSTRAINT `FK_auteurs_livres_role`
   FOREIGN KEY (`id_role`)
   REFERENCES `roles_auteurs` (`id_role`)
+  ON DELETE CASCADE
+    ON UPDATE CASCADE
 
 )
   ENGINE=InnoDB
