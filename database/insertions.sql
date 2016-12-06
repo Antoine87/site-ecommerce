@@ -72,12 +72,15 @@ INSERT INTO ecommerce.formats (format) VALUES ('Ebook Kindle');
 INSERT INTO ecommerce.formats (format) VALUES ('Poche');
 INSERT INTO ecommerce.formats (format) VALUES ('Livre audio');
 
+SET FOREIGN_KEY_CHECKS = 1;
+
+
 -- ------------------------------------------------------
 --  IMPORTATION DES LIVRES depuis un fichier csv
 -- ------------------------------------------------------
 TRUNCATE  livres;
 LOAD DATA INFILE
-  'C:\\Users\\Administrateur.FORMATI-2QSU3VN\\Documents\\PHP\\projet-ecommerce-php\\database\\data-source\\livres.csv'
+  'C:\\Users\\formation\\Documents\\PHP\\projet-ecommerce-php\\database\\data-source\\livres.csv'
 INTO TABLE livres
 FIELDS
 TERMINATED BY ';'
@@ -100,7 +103,7 @@ SET
 TRUNCATE auteurs_livres;
 INSERT INTO auteurs_livres
 (id_livre, id_auteur, id_role) VALUES
-  (1,1,1), (2,3,1), (3,5,1), (4,5,1), (5,1,1),
+  (1,2,1), (2,3,1), (3,5,1), (4,5,1), (5,1,1),
   (6,4,1), (7,6,1), (8,1,1), (9,6,1), (10,4,1),
   (11,3,1), (12,4,1), (13,3,1), (14,3,1), (15,5,1),
   (16,5,1), (17,5,1), (18,2,1), (19,1,1), (20,5,1),

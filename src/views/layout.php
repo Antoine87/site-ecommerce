@@ -43,7 +43,7 @@
                         <li><a href="#">coupons</a></li>
                         <li><a href="/livraison">modes de livraison</a></li>
                         <li><a href="#">statuts de commande</a></li>
-                        <li><a href="#">mode de paiement</a></li>
+                        <li><a href="/mode-paiement">mode de paiement</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">commentaires</a></li>
                         <li><a href="#">livres</a></li>
