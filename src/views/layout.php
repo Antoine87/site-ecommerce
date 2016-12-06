@@ -35,7 +35,7 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">auteurs</a></li>
+                        <li><a href="/auteur">auteurs</a></li>
                         <li><a href="#">roles</a></li>
                         <li><a href="#">éditeurs</a></li>
                         <li><a href="#">langues</a></li>

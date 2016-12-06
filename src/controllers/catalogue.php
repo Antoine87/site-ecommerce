@@ -1,5 +1,3 @@
 <?php
-
 echo renderView('view-catalogue',[
-    'pageTitle' => 'Catalogue des livres'
-]);
+    'pageTitle' => 'Catalogue des livres']);
