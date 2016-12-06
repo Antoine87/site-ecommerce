@@ -41,7 +41,7 @@
                         <li><a href="#">langues</a></li>
                         <li><a href="/collections">collections</a></li>
                         <li><a href="#">coupons</a></li>
-                        <li><a href="#">modes de livraison</a></li>
+                        <li><a href="/livraison">modes de livraison</a></li>
                         <li><a href="#">statuts de commande</a></li>
                         <li><a href="#">mode de paiement</a></li>
                         <li role="separator" class="divider"></li>
