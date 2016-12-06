@@ -357,7 +357,7 @@ CREATE TABLE `auteurs_livres` (
 CREATE TABLE `paiements` (
   `id_commande` INT UNSIGNED NOT NULL,
   `montant` DECIMAL(10,2) UNSIGNED NOT NULL,
-  `date de paiement` DATETIME ,
+  `date_de_paiement` DATETIME ,
   `id_mode_de_paiement` TINYINT(3) UNSIGNED NOT NULL,
 
   PRIMARY KEY (id_commande),
