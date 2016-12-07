@@ -2,6 +2,8 @@
 use m2i\Framework\Router;
 use m2i\Framework\Dispatcher;
 
+session_start();
+
 define("ROOT_PATH", dirname(__DIR__));
 
 include ROOT_PATH."/src/config/config.php";

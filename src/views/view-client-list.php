@@ -1,3 +1,11 @@
+
+<div>
+    <a href="/client/form"
+       class="btn btn-sm btn-primary">
+        Ajouter
+    </a>
+</div>
+
 <table class="table table-striped table-bordered">
     <tr>
         <th>Nom</th>
@@ -16,6 +24,11 @@
                 <a href="/client/delete/<?=$client["id_client"]?>"
                         class="btn btn-sm btn-primary">
                     Supprimer
+                </a>
+
+                <a href="/client/form/<?=$client["id_client"]?>"
+                   class="btn btn-sm btn-primary">
+                    Modifier
                 </a>
 
             </td>
