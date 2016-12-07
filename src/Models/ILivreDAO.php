@@ -1,6 +1,8 @@
 <?php
 namespace m2i\ecommerce\DAO;
 
+use m2i\ecommerce\DTO\LivreDTO;
+
 interface ILivreDAO {
 
     public function findAll();
