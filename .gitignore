@@ -2,3 +2,4 @@
 vendors/*
 bower_components/*
 web/dependencies/*
+/vendor/
