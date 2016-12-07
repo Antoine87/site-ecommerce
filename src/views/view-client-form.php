@@ -2,9 +2,9 @@
 
 <div class="col-md-6 col-md-offset-3">
 
-    <?php if(isset($_SESSION['error'])): ?>
+    <?php if(isset($error)): ?>
         <div class="alert alert-danger">
-            <?=$_SESSION['error']?>
+            <?=$error?>
         </div>
     <?php endif; ?>
 

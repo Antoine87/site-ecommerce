@@ -1,6 +1,6 @@
 
 <div>
-    <a href="/client/form"
+    <a href="/client/add-edit"
        class="btn btn-sm btn-primary">
         Ajouter
     </a>
@@ -26,7 +26,7 @@
                     Supprimer
                 </a>
 
-                <a href="/client/form/<?=$client["id_client"]?>"
+                <a href="/client/add-edit/<?=$client["id_client"]?>"
                    class="btn btn-sm btn-primary">
                     Modifier
                 </a>
