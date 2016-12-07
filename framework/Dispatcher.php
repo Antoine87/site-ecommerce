@@ -26,10 +26,15 @@ class Dispatcher
     public function dispatch(){
         $controllerName = $this->router->getControllerName();
         $controllerName = $this->controllerNameSpace.$controllerName;
+        $actionName = $this->router->getActionName();
+
+        $controller = new $controllerName();
+
+
         call_user_func_array(
             [
-                $controllerName,
-                $this->router->getActionName()
+                $controller,
+                $actionName
             ],
             $this->router->getActionParameters()
         );

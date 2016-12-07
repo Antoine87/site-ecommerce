@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: formation
- * Date: 07/12/2016
- * Time: 11:36
- */
-
 namespace m2i\Framework;
 
 

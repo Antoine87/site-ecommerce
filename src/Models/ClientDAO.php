@@ -76,7 +76,7 @@ $client->getPrenom(),
 $client->getEmail(),
 $client->getMotDePasse(),
 $client->getDateNaissance(),
-$client->getIdClient()
+$client->getId()
         );
         $statement = $this->pdo->prepare($sql);
         return $statement->execute($data);
@@ -86,7 +86,7 @@ $client->getIdClient()
         if($client->getId() != null){
             $sql = "DELETE FROM clients WHERE id_client=? ";
             $statement = $this->pdo->prepare($sql);
-            return $statement->execute([$client->getIdClient()]);
+            return $statement->execute([$client->getId()]);
         }
     }
 

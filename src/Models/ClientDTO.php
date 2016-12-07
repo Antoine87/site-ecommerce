@@ -1,5 +1,5 @@
 <?php
-namespace m2i\ecommerce\DTO;
+namespace m2i\ecommerce\DAO;
 
 class ClientDTO {
 
@@ -10,10 +10,10 @@ private $email;
 private $motDePasse;
 private $dateNaissance;
 
-    public function setIdClient($idClient){
+    public function setId($idClient){
             $this->idClient = $idClient;
         }
-public function getIdClient(){
+public function getId(){
             return $this->idClient;
         }
 public function setNom($nom){
