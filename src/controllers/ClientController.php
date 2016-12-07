@@ -11,13 +11,20 @@ namespace m2i\ecommerce\Controllers;
 
 use m2i\ecommerce\Config\DbConnection;
 use m2i\ecommerce\DAO\ClientDAO;
+use m2i\ecommerce\DAO\LangueDAO;
+use m2i\Framework\View;
 
 class ClientController
 {
     public function indexAction(){
-        $dao = new ClientDAO(DbConnection::getPDO());
+        $dao = new LangueDAO(DbConnection::getPDO());
         $data = $dao->findAll();
-        var_dump($data);
-        echo "je suis le contrôleur du client";
+
+        $view = new View();
+
+        echo $view->render('view-home', [
+            'data' => $data
+            ]
+        );
     }
 }
