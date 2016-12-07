@@ -1,4 +1,6 @@
 <?php
+namespace m2i\ecommerce\DAO;
+
 class CommandeDAO implements ICommandeDAO {
 
     /**
@@ -9,9 +11,9 @@ class CommandeDAO implements ICommandeDAO {
 
     /**
     * DAOClient constructor.
-    * @param PDO $pdo
+    * @param \PDO $pdo
     */
-    public function __construct(PDO $pdo)
+    public function __construct(\PDO $pdo)
     {
     $this->pdo = $pdo;
     }

@@ -1,4 +1,6 @@
 <?php
+namespace m2i\ecommerce\DAO;
+
 class CollectionDAO implements ICollectionDAO {
 
     /**
@@ -9,9 +11,9 @@ class CollectionDAO implements ICollectionDAO {
 
     /**
     * DAOClient constructor.
-    * @param PDO $pdo
+    * @param \PDO $pdo
     */
-    public function __construct(PDO $pdo)
+    public function __construct(\PDO $pdo)
     {
     $this->pdo = $pdo;
     }

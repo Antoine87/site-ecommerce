@@ -1,4 +1,6 @@
 <?php
+namespace m2i\ecommerce\DTO;
+
 class LignesCommandeDTO {
 
     private $idCommande;

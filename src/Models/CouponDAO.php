@@ -1,4 +1,6 @@
 <?php
+namespace m2i\ecommerce\DAO;
+
 class CouponDAO implements ICouponDAO {
 
     /**
@@ -9,9 +11,9 @@ class CouponDAO implements ICouponDAO {
 
     /**
     * DAOClient constructor.
-    * @param PDO $pdo
+    * @param \PDO $pdo
     */
-    public function __construct(PDO $pdo)
+    public function __construct(\PDO $pdo)
     {
     $this->pdo = $pdo;
     }

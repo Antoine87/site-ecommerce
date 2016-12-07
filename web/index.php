@@ -3,13 +3,8 @@ use m2i\Framework\Router;
 use m2i\Framework\Dispatcher;
 
 define("ROOT_PATH", dirname(__DIR__));
-/*
-include ROOT_PATH."/src/config/config.php";
-include ROOT_PATH."/lib/lib-pdo.php";
-include ROOT_PATH."/lib/framework/lib-mvc.php";
 
-include ROOT_PATH."/src/autoload.php";
-*/
+include ROOT_PATH."/src/config/config.php";
 include ROOT_PATH."/vendor/autoload.php";
 
 //Récupération du paramètre page
