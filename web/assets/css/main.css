@@ -1,3 +1,7 @@
 .content {
     margin-top: 80px;
 }
+
+.catalogue-item {
+    border-bottom: 1px solid #777;
+}
