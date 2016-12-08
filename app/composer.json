@@ -1,0 +1,21 @@
+{
+    "name": "m2i/ecommerce",
+    "description": "Un petit site de commerce electronique",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {"name": "Stéphane Emploi", "email": "moi@moi.com"}
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+
+    "autoload" : {
+        "psr-4": {
+            "m2i\\Framework\\": "framework/",
+            "m2i\\ecommerce\\Controllers\\": "src/controllers/",
+            "m2i\\ecommerce\\DAO\\": "src/Models/",
+            "m2i\\ecommerce\\DTO\\": "src/Models/",
+            "m2i\\ecommerce\\Config\\": "src/config/"
+        }
+    }
+}

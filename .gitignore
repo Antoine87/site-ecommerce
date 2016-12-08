@@ -1,4 +1,6 @@
-.idea/*
-vendors/*
-bower_components/*
-web/dependencies/*
+.idea/
+/app/database/data-source/livres.ods
+/app/web/dependencies/
+/app/vendor/
+*.log
+.vagrant/
