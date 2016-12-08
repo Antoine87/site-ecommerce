@@ -24,4 +24,29 @@ class CatalogueController
         );
     }
 
+    public function ajoutPanierAction($id){
+        $dao = new LivreDAO(DbConnection::getPDO());
+        $livre = $dao->findOneById([$id]);
+
+        $panier = $_SESSION["panier"] ?? [];
+
+        if(isset($panier[$id])){
+            $panier[$id]["qt"] ++;
+        } else {
+            $panier[$id]["qt"] = 1;
+            $panier[$id]["titre"] = $livre["titre"];
+            $panier[$id]["prix"] = $livre["prix"];
+        }
+
+        $_SESSION["flash"] = "Votre produit a bien été ajouté au panier";
+
+        $_SESSION["panier"] = $panier;
+
+        header("location:/catalogue");
+    }
+
+
+
+
+
 }

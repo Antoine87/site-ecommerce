@@ -1,6 +1,8 @@
 <div class="col-md-12">
     <h2>Catalogue</h2>
 
+
+
     <?php foreach ($catalogue as $livre): ?>
         <div class="catalogue-item col-md-12">
             <div class="col-md-8">

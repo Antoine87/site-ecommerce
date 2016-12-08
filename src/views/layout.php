@@ -62,6 +62,12 @@
     </div><!-- /.container-fluid -->
 </nav>
 <div class="row content">
+    <?php if(isset($_SESSION["flash"])): ?>
+        <div class="alert alert-info">
+            <?= $_SESSION["flash"] ?>
+        </div>
+    <?php endif; ?>
+
     <?= $pageContent ?>
 </div>
 
