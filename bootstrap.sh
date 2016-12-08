@@ -36,6 +36,22 @@ sudo apt-get install php-mysql
 
 #--------------------------------------------------------------------------
 
+echo "gestion du fichier mysqld.cnf"
+# Création d'un lien symbolique pour utiliser un fichier mysqld.cnf
+# modifiable depuis la racine du projet
+
+# suppression du fichier mysqld.cnf d'origine
+sudo rm -f /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# définition d'un alias qui pointe vers notre propre fichier mysqld.cnf
+sudo ln -s 	/var/web-projects/conf/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# Redémarrage du service mysql
+sudo service mysql restart
+#--------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------
+
 echo "configuration de phpMyAdmin"
 sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/dbconfig-install boolean true"
 sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/app-password-confirm password $PASSWORD"
