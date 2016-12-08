@@ -96,4 +96,13 @@ mv composer.phar /usr/local/bin/composer
 #--------------------------------------------------------------------------
 
 echo "création de la base de données"
-mysql -u root -p$PASSWORD < /var/web-projects/conf/sql/db.sql
+
+echo "-- déplacement du fichier de source de données --"
+mv '/var/web-projects/conf/database/livres.csv' '/var/lib/mysql-files/livres.csv'
+
+echo "--- création de la structure ---"
+mysql -u root -p$PASSWORD < /var/web-projects/conf/database/structure.sql
+echo "--- insertion des données ---"
+mysql -u root -p$PASSWORD < /var/web-projects/conf/database/insertions.sql
+echo "--- création des vues ---"
+mysql -u root -p$PASSWORD < /var/web-projects/conf/database/vues.sql
