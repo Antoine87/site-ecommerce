@@ -1,5 +1,4 @@
-.idea/*
-vendors/*
-bower_components/*
-web/dependencies/*
-/vendor/
+.idea/
+/app/database/data-source/livres.ods
+/app/web/dependencies/
+/app/vendor/
