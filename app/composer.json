@@ -6,8 +6,16 @@
     "authors": [
         {"name": "Stéphane Emploi", "email": "moi@moi.com"}
     ],
+
     "minimum-stability": "stable",
     "require": {},
+
+    "require-dev": {
+        "phpmd/phpmd" : "@stable",
+        "phpunit/phpunit": "@stable"},
+
+
+
 
     "autoload" : {
         "psr-4": {

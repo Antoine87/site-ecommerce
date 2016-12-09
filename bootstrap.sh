@@ -91,7 +91,7 @@ echo "gestion du fichier php.ini"
 sudo rm -f /etc/php/7.0/apache2/php.ini
 
 # définition d'un alias qui pointe vers notre propre fichier php.ini
-sudo ln -s 	/var/web-projects/conf/php.ini /etc/php/7.0/apache2/php.ini
+sudo ln -s 	/var/bowerweb-projects/conf/php.ini /etc/php/7.0/apache2/php.ini
 
 #--------------------------------------------------------------------------
 
