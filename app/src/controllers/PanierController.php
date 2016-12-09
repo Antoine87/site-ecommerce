@@ -27,4 +27,26 @@ class PanierController
         );
     }
 
+    public function recalculerAction(){
+        $newQt = $_POST["qt"];
+        $panier = $_SESSION["panier"] ?? [];
+
+        foreach ($newQt as $pk => $val){
+            if($val == 0){
+                unset($panier[$pk]);
+            } else {
+                $panier[$pk]["qt"] = $val;
+            }
+        }
+
+        $_SESSION["panier"] = $panier;
+
+        header("location:/panier");
+    }
+
+    public function ViderAction(){
+        unset($_SESSION["panier"]);
+        header("location:/catalogue");
+    }
+
 }
