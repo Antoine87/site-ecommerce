@@ -12,7 +12,7 @@ class RecapPanierTest extends PHPUnit_Framework_TestCase
 
     }
 
-    public function TestRecapPanierKnowsHowToSum(){
+    public function testRecapPanierKnowsHowToSum(){
         $panier = [
             "1" => [
                 "qt" => 1,
