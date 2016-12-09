@@ -46,6 +46,11 @@ sudo rm -f /etc/mysql/mysql.conf.d/mysqld.cnf
 # définition d'un alias qui pointe vers notre propre fichier mysqld.cnf
 sudo ln -s 	/var/web-projects/conf/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 
+sudo cp /var/web-projects/conf/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
+
+sudo chown mysql:mysql /etc/mysql/mysql.conf.d/mysqld.cnf
+sudo chmod 600 /etc/mysql/mysql.conf.d/mysqld.cnf
+
 # Redémarrage du service mysql
 sudo service mysql restart
 #--------------------------------------------------------------------------

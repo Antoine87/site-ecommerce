@@ -30,7 +30,6 @@ class Dispatcher
 
         $controller = new $controllerName();
 
-
         call_user_func_array(
             [
                 $controller,

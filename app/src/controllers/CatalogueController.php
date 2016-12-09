@@ -45,8 +45,4 @@ class CatalogueController
         header("location:/catalogue");
     }
 
-
-
-
-
 }

@@ -25,7 +25,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">catalogue</a></li>
+                <li><a href="/catalogue">catalogue</a></li>
                 <li><a href="#">mon compte</a></li>
 
                 <!-- liste des cruds -->
@@ -56,7 +56,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Voir le panier</a></li>
+                <li><a href="/panier">Voir le panier</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -65,6 +65,9 @@
     <?php if(isset($_SESSION["flash"])): ?>
         <div class="alert alert-info">
             <?= $_SESSION["flash"] ?>
+            <?php
+                unset($_SESSION["flash"]);
+            ?>
         </div>
     <?php endif; ?>
 
