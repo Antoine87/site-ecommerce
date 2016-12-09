@@ -83,7 +83,7 @@ FIELDS
 TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES
-TERMINATED BY '\r\n'
+TERMINATED BY '\n'
 IGNORE 1 LINES
 
 (titre,rubrique,id_langue,resume,
