@@ -3,6 +3,7 @@
 namespace m2i\ecommerce\Controllers;
 
 
+use duncan3dc\Phpexcel\Excel;
 use m2i\ecommerce\Config\DbConnection;
 use m2i\ecommerce\DAO\ILivreDAO;
 use m2i\ecommerce\DAO\LivreDAO;
@@ -45,6 +46,38 @@ class CatalogueController
         $_SESSION["panier"] = $panier;
 
         header("location:/catalogue");
+    }
+
+    public function exportAction(){
+        try {
+            $catalogue = $this->getDAO()->findAll();
+
+            $excel = new Excel();
+
+            $excel->setCell("A1", "Titre");
+            $excel->setCell("B1", "Prix");
+            $excel->setCell("C1", "Editeur");
+
+            for($i=0; $i< count($catalogue); $i++){
+                $livre = $catalogue[$i];
+                $cell = $excel->getCellName(0, ($i+2));
+                $excel->setCell($cell, $livre["titre"]);
+                $cell = $excel->getCellName(1, ($i+2));
+                $excel->setCell($cell, $livre["prix"]);
+                $cell = $excel->getCellName(2, ($i+2));
+                $excel->setCell($cell, $livre["nom_editeur"]);
+            }
+
+            header("Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.‌​sheet");
+            header("Content-Disposition: attachment; filename=catalogue.xlsx");
+
+            $path = 'php://output';
+            $excel->save($path);
+
+        } catch (\Exception $e){
+            echo $e->getMessage();
+        }
+
     }
 
     /**

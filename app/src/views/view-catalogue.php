@@ -1,6 +1,12 @@
 <div class="col-md-12">
     <h2>Catalogue</h2>
 
+    <div class="btn-group">
+        <a class="btn btn-primary" href="/catalogue/export">
+            Exporter le catalogue
+        </a>
+    </div>
+
 
 
     <?php foreach ($catalogue as $livre): ?>

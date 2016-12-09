@@ -7,7 +7,9 @@
         {"name": "Stéphane Emploi", "email": "moi@moi.com"}
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "duncan3dc/phpexcel": "@stable"
+    },
 
     "require-dev": {
         "phpmd/phpmd" : "@stable",
