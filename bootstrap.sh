@@ -46,6 +46,11 @@ sudo rm -f /etc/mysql/mysql.conf.d/mysqld.cnf
 # définition d'un alias qui pointe vers notre propre fichier mysqld.cnf
 sudo ln -s 	/var/web-projects/conf/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 
+sudo cp /var/web-projects/conf/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
+
+sudo chown mysql:mysql /etc/mysql/mysql.conf.d/mysqld.cnf
+sudo chmod 600 /etc/mysql/mysql.conf.d/mysqld.cnf
+
 # Redémarrage du service mysql
 sudo service mysql restart
 #--------------------------------------------------------------------------
@@ -114,7 +119,7 @@ mv composer.phar /usr/local/bin/composer
 echo "création de la base de données"
 
 echo "-- déplacement du fichier de source de données --"
-mv '/var/web-projects/conf/database/livres.csv' '/var/lib/mysql-files/livres.csv'
+cp '/var/web-projects/conf/database/livres.csv' '/var/lib/mysql-files/livres.csv'
 
 echo "--- création de la structure ---"
 mysql -u root -p$PASSWORD < /var/web-projects/conf/database/structure.sql
