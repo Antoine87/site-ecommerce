@@ -58,9 +58,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="navbar-text">
                     <?php
-                    $recapPanier = new \m2i\ecommerce\services\RecapPanier(
-                        $_SESSION["panier"]??[]
-                    );
+                    $recapPanier = \m2i\Framework\ServiceLocator::get("recap_panier");
                     echo $recapPanier->getInfos();
                     ?>
                 </li>

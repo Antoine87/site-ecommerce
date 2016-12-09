@@ -4,13 +4,15 @@ namespace m2i\ecommerce\Controllers;
 
 
 use m2i\ecommerce\Config\DbConnection;
+use m2i\ecommerce\DAO\ILivreDAO;
 use m2i\ecommerce\DAO\LivreDAO;
+use m2i\Framework\ServiceLocator;
 use m2i\Framework\View;
 
 class CatalogueController
 {
     public function indexAction(){
-        $dao = new LivreDAO(DbConnection::getPDO());
+        $dao = $this->getDAO();
         $catalogue = $dao->findAll();
 
         $view = new View();
@@ -25,7 +27,7 @@ class CatalogueController
     }
 
     public function ajoutPanierAction($id){
-        $dao = new LivreDAO(DbConnection::getPDO());
+        $dao = $this->getDAO();
         $livre = $dao->findOneById([$id]);
 
         $panier = $_SESSION["panier"] ?? [];
@@ -43,6 +45,13 @@ class CatalogueController
         $_SESSION["panier"] = $panier;
 
         header("location:/catalogue");
+    }
+
+    /**
+     * @return ILivreDAO
+     */
+    private function getDAO(){
+        return ServiceLocator::get("livres.dao");
     }
 
 }
