@@ -56,6 +56,14 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <li class="navbar-text">
+                    <?php
+                    $recapPanier = new \m2i\ecommerce\services\RecapPanier(
+                        $_SESSION["panier"]??[]
+                    );
+                    echo $recapPanier->getInfos();
+                    ?>
+                </li>
                 <li><a href="/panier">Voir le panier</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -70,6 +78,8 @@
             ?>
         </div>
     <?php endif; ?>
+
+
 
     <?= $pageContent ?>
 </div>
