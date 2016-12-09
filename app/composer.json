@@ -9,6 +9,11 @@
     "minimum-stability": "stable",
     "require": {},
 
+    "require-dev": {
+        "phpmd/phpmd" : "@stable",
+        "phpunit/phpunit" : "@stable"
+    },
+
     "autoload" : {
         "psr-4": {
             "m2i\\Framework\\": "framework/",
