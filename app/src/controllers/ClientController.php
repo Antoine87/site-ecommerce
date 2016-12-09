@@ -4,6 +4,7 @@ namespace m2i\ecommerce\Controllers;
 use m2i\ecommerce\Config\DbConnection;
 use m2i\ecommerce\DAO\ClientDAO;
 use m2i\ecommerce\DAO\ClientDTO;
+use m2i\Framework\ServiceLocator;
 use m2i\Framework\View;
 
 class ClientController
@@ -118,7 +119,7 @@ class ClientController
      */
     private function getDAO():ClientDAO
     {
-        $dao = new ClientDAO(DbConnection::getPDO());
+        $dao = ServiceLocator::get('client.dao');
         return $dao;
     }
 
@@ -127,7 +128,7 @@ class ClientController
      */
     private function getDTO():ClientDTO
     {
-        $client = new ClientDTO();
+        $client = ServiceLocator::get('client.dto');
         return $client;
     }
 }
