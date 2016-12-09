@@ -3,6 +3,8 @@ use m2i\Framework\ServiceLocator;
 use m2i\ecommerce\services\RecapPanier;
 use m2i\ecommerce\DAO\LivreDAO;
 use m2i\ecommerce\DTO\LivreDTO;
+use m2i\ecommerce\DAO\ClientDTO;
+use m2i\ecommerce\DAO\ClientDAO;
 
 define('DSN','mysql:host=localhost;dbname=ecommerce;charset=utf8');
 define('DB_USER', 'root');
@@ -29,4 +31,12 @@ ServiceLocator::register("livres.dao", function (){
 
 ServiceLocator::register("livres.dto", function (){
     return new LivreDTO();
+});
+
+ServiceLocator::register("client.dao", function (){
+    return new ClientDAO(ServiceLocator::get("db_connection"));
+});
+
+ServiceLocator::register("client.dto", function (){
+    return new ClientDTO();
 });
