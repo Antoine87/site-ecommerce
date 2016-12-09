@@ -6,8 +6,9 @@ session_start();
 
 define("ROOT_PATH", dirname(__DIR__));
 
-include ROOT_PATH."/src/config/config.php";
 include ROOT_PATH."/vendor/autoload.php";
+include ROOT_PATH."/src/config/config.php";
+
 
 //Récupération du paramètre page
 $page = filter_input(INPUT_GET,"page",FILTER_SANITIZE_STRING);
